@@ -1,76 +1,242 @@
-body{
-    margin:0;
+body {
+    margin: 0;
     width: 100%;
-}
-header{
-    background: linear-gradient(to top, rgba(11, 11, 11, 0.575), rgba(255, 255, 255, 0.688));
-    color:white;
-    padding: 10px;
+    height: 100%;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #355e879a, #50bce083);
+    color: #fff;
+    text-align: center;
     position: sticky;
-    top: 0;
+    top: 0; /* Sticky header at the top */
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-ul{
+    padding: 20px;
+    text-shadow: #101010 1px 0 10px;
+    z-index: 1000; /* Ensures header stays above other elements */
+  }
+  
+  nav {
+    width: 40%;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #000000;
+    transition: width 0.3s ease-out;
+  }
+  
+  a:hover::after {
+    width: 90%;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo span {
+    font-family: "Sofia", sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  #home {
+    background: linear-gradient(
+        0deg,
+        rgba(142, 198, 228, 0.599),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("/tech.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: #000000 1px 0 10px;
+  }
+  
+  .profession span {
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .profession span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  .profession span:hover::after {
+    width: 100%;
+  }
+  
+  main {
+    font-family: Optima, sans-serif;
+  }
+  
+  #about {
+    margin: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0.5px 0.5px 10px #d1cece;
     display: flex;
     justify-content: center;
     gap: 20px;
-    list-style: none;
-}
-.logo img{
-    border-radius: 50%
-}
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-a{
-    color: white;
-    text-decoration: none;
-    position: relative;
-}
-a::after{
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    bottom: -2px;
-    left: 0;
-    transition: width 0.6s ease-out;
-}
-a:hover::after{
-    width: 100%;
-}
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-#home{
-    background:url("/weathered-blue-page.jpg") ;
-    background-position: center;
-    background-size: cover;
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-#about{
-    background-color: rgb(255, 255, 255);
-    font-family: "Roboto", serif;
-    margin-top: 50px;
+  }
+  
+  .contactInfo-skills,
+  .about-me {
+    width: 50%;
+  }
+  
+  .contactInfo {
+    padding-left: 40%;
+  }
+  
+  .progression {
+    background: rgb(132, 154, 190);
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+  
+  .progression-bar {
+    background: #1d56e4;
+    height: 10px;
+    border-radius: 5px;
+  }
+  
+  .skills {
+    padding: 10px;
+  }
+  
+  .skill {
+    margin-top: 15px;
+  }
+  
+  .skill-title {
+    font-weight: bold;
+  }
+  
+  #projects {
+    margin: 50px;
     padding: 20px;
-    box-shadow: 0.5px 0.5px 10px grey;
-    width: 80%;
+  }
+  
+  #projects h1,
+  h4 {
+    text-align: center;
+  }
+  
+  #projects h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+  
+  .project-row {
     display: flex;
-    gap: 10px;
-}
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .project {
+    font-family: monospace;
+    word-spacing: -3px;
+    margin: 1em;
+    padding: 1em;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+  }
+  
+  .project-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  .project-desc {
+    color: #1d56e4;
+    padding: 10px;
+  }
+  
+  #contact {
+    background: linear-gradient(
+        rgba(142, 198, 228, 0.599),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("/tech.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 30px;
+  }
+  
+  .contact-form {
+    margin: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0.5px 0.5px 10px #d1cece98;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
