@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   width: 100%;
@@ -18,23 +21,24 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  font-size: 25px;
+  font-size: 1.7em;
   text-shadow: #101010 1px 0 10px;
   z-index: 1000;
-  height: 6vh;
+  height: 11vh;
 }
 
 nav {
-  width: 40%;
-  font-size: 1em;
+  width: 45%;
+  font-size: 0.8em;
   font-weight: bold;
   font-family: "Source Code Pro";
+  margin-right: 30px;
 }
 
 ul {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.8em;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -87,9 +91,9 @@ a:hover::after {
       rgba(142, 198, 228, 0.599),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/tech.jpg");
+    url("./assets/tangier-medina.jpg");
   background-size: cover;
-  background-position: center;
+  /* background-position: ; */
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -99,6 +103,18 @@ a:hover::after {
   font-size: 2em;
   font-weight: bold;
   text-shadow: #000000 1px 0 10px;
+  animation: bg-pan-bl 20s both infinite;
+}
+@keyframes bg-pan-bl {
+  0% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 #home h2 {
   font-size: 1em;
@@ -118,16 +134,16 @@ a:hover::after {
 .about-me {
   width: 50%;
 }
-.about-me p {
-  font-family: "Source Code Pro", sans-serif;
-  /* text-align:center; */
-  padding: 15px;
-  line-height: 40px;
-  font-size: 20px;
+.contactInfo-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .contactInfo {
-  padding-left: 40%;
-  margin-top: 50px;
+  font-size: 1.1em;
+  width: fit-content;
+  justify-self: center;
 }
 .progression {
   background-color: rgb(178, 209, 209);
@@ -140,7 +156,8 @@ a:hover::after {
   border-radius: 5px;
 }
 .skills {
-  padding: 10px;
+  /* padding: 10px; */
+  width: 100%;
 }
 
 .skill {
@@ -150,8 +167,9 @@ a:hover::after {
   font-weight: bold;
   margin-bottom: 10px;
 }
-.about-me p {
-  font-size: 25px;
+p {
+  padding:10px;
+  text-align: justify;
 }
 h3 {
   font-size: 25px;
@@ -210,15 +228,16 @@ h2 {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  padding: 70px;
-  height: 90vh;
   display: flex;
   align-items: center;
+  padding-block: 20vh;
+  justify-content: center;
 }
 
 .contact-card {
   background-color: #fff;
-  padding: 20px;
+  width: 80%;
+  padding: 1%;
   box-shadow: 0.5px 0.5px 10px grey;
   display: flex;
   justify-content: center;
@@ -234,19 +253,19 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  /* padding: 10px; */
+  gap: 2em;
 }
 input,
 textarea {
-  height: 40px;
-  width: 90%;
+  height: 4em;
+  width: 95%;
   padding: 15px;
-  margin-block: 10px;
   border-radius: 3px;
   border-color: rgba(128, 128, 128, 0.388);
 }
 button {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 90%;
   height: 50px;
   color: white;
@@ -257,18 +276,24 @@ button {
 button:hover {
   background-color: rgb(100, 118, 198);
 }
+.about-me,
 .get-in-touch {
-  padding: 20px;
+  font-family: "Source Code Pro", sans-serif;
+  /* padding: 15px; */
+  line-height: 40px;
+  font-size: 1.1em;
+}
+.get-in-touch {
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
-  font-size: 1.5em;
-  line-height: 34px;
 }
 
 .get-in-touch ul {
   display: flex;
   flex-direction: column;
   list-style: none;
+  font-weight: 600;
   padding: 0;
   gap: 6px;
 }
@@ -277,7 +302,7 @@ button:hover {
   gap: 30px;
   margin-top: 20px;
 }
-.social a{
+.social a {
   text-decoration: none;
 }
 .cercle {
@@ -303,6 +328,7 @@ footer p {
   margin: 0;
   padding: 20px;
   color: #ffffff;
+  text-align: center;
 }
 @keyframes typing {
   0% {
@@ -320,12 +346,90 @@ footer p {
   border-right: 3px solid rgb(255, 255, 255); /* Cursor effect */
   white-space: nowrap;
   width: 20ch; /* Defines the visible width in characters */
-  animation: typing 8s steps(25) infinite,/* Typing + deleting combined */ 
-  blink 0.9s step-start infinite; /* Blinking cursor */
+  animation: typing 8s steps(25) infinite,
+    /* Typing + deleting combined */ blink 0.9s step-start infinite; /* Blinking cursor */
 }
 
 @keyframes blink {
   50% {
     border-color: transparent;
   } /* Blinking cursor */
+}
+
+@media only screen and (max-width: 940px) {
+  header {
+    flex-direction: column;
+    height: 20vh;
+    font-size: 2em;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  nav {
+    width: 70%;
+    font-size: 0.7em;
+    margin-inline: 3px;
+  }
+  ul {
+    width: 100%;
+  }
+  #home {
+    font-size: 1.5em;
+  }
+  #home h2 {
+    font-size: 0.8em;
+  }
+  #about {
+    flex-direction: column;
+  }
+  #contact {
+    padding-block: 10px;
+  }
+  .contactInfo-skills,
+  .about-me {
+    width: 100%;
+  }
+  .skills {
+    width: 100%;
+  }
+  .project-row {
+    flex-wrap: wrap;
+  }
+  .contact-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-form,
+  .get-in-touch {
+    width: 100%;
+    padding: 20px;
+    max-width: 100%;
+  }
+  .social {
+    justify-content: center;
+  }
+  p {
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  header {
+    flex-direction: column;
+    font-size: 1.5em;
+    justify-content: space-around;
+    gap: 15px;
+  }
+  nav {
+    width: 100%;
+    font-size: 0.6em;
+  }
+  #projects {
+    margin: 0;
+  }
+  p,
+  .get-in-touch ul {
+    font-size: 0.7em;
+    text-align: justify;
+  }
 }
